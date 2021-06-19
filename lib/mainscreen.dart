@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'secondscreen.dart';
 import 'thirdscreen.dart';
@@ -11,11 +10,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreen extends State<MainScreen> {
-
-  
-
-  
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -25,6 +20,17 @@ class _MainScreen extends State<MainScreen> {
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: Colors.white,
               ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.event_note),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FourthScreen()),
+                );
+              },
+            ),
+          ],
         ),
         drawer: Drawer(
           child: ListView(
@@ -33,8 +39,7 @@ class _MainScreen extends State<MainScreen> {
                 child: UserAccountsDrawerHeader(
                   currentAccountPicture: CircleAvatar(
                     backgroundImage: NetworkImage(
-                      "https://flutterx.com/thumbnails/artifact-1?clear_cache=1"
-                      ),
+                        "https://flutterx.com/thumbnails/artifact-1?clear_cache=1"),
                     backgroundColor: Color(0xff00BCD5),
                   ),
                   accountName: Text(
@@ -49,7 +54,6 @@ class _MainScreen extends State<MainScreen> {
                 title: Text('Data'),
                 leading: Icon(Icons.folder),
                 onTap: () {
-                  
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SecondScreen()),
@@ -60,7 +64,6 @@ class _MainScreen extends State<MainScreen> {
                 title: Text('Search'),
                 leading: Icon(Icons.people),
                 onTap: () {
-
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ThirdScreen()),
@@ -143,30 +146,6 @@ class _MainScreen extends State<MainScreen> {
                       );
                     },
                   ),
-                  new ElevatedButton(
-                    child: Text(
-                      "Statistics",
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        onPrimary: Colors.blueGrey,
-                        primary: Colors.white,
-                        onSurface: Colors.grey,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 30, horizontal: 180)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => FourthScreen()),
-                      );
-                    },
-                  ),
-                ])
-                
-                
-                )
-                
-               
-                );
+                ])));
   }
 }
