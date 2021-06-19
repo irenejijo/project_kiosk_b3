@@ -1,0 +1,41 @@
+name: kiosk_data
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^1.3.0
+  firebase_auth: ^1.4.1
+  cloud_firestore: ^2.2.2
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  material_floating_search_bar: ^0.3.4
+  getflutter: ^1.1.3
+  firebase_database: ^7.1.1
+  webview_flutter: ^2.0.8
+
+
+  # The following section is specific to Flutter.
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  assets:
+    - assets/images/c.jpg
+    - assets/images/2.jpg
+    - assets/images/ic.png
+    - assets/images/flutter.png
+ 
+  uses-material-design: true
